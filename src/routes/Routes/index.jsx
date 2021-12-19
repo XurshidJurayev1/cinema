@@ -27,7 +27,7 @@ function Routes() {
         <PrivateRoute path="/profile">
           <Profile />
         </PrivateRoute>
-        <PrivateRoute path="/all-products">
+        <PrivateRoute path="/all-cinema">
           <AllProducts />
         </PrivateRoute>
 
