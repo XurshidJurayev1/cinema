@@ -38,7 +38,7 @@ function Header() {
             Cinema app
           </Button>
           <div className={classes.rightToolbar}>
-            <Button color="inherit" component={Link} to="/all-products">
+            <Button color="inherit" component={Link} to="/all-cinema">
               All cinema
             </Button>
           </div>
