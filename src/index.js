@@ -1,21 +1,30 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "@fontsource/roboto";
-import "./index.css";
-import { BrowserRouter as Router } from "react-router-dom";
-import App from "./App";
-import AuthProvider from "./providers/AuthProvider";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '@fontsource/roboto';
+import './index.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
+import AuthProvider from './providers/AuthProvider';
+import reportWebVitals from './reportWebVitals';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from './reducer';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router>
-        <App />
-      </Router>
-    </AuthProvider>
+    <Provider store={store}>
+      <AuthProvider>
+        <Router>
+          <App />
+        </Router>
+      </AuthProvider>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

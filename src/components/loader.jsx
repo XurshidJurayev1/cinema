@@ -11,7 +11,7 @@ function Loader() {
   const classes = useStyles();
   return (
     <Container maxWidth="md" className={classes.root}>
-      <Grid container spacing={3} alignItems="center" justify="center">
+      <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item>
           <CircularProgress color="inherit" />
         </Grid>
