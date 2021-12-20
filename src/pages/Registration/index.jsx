@@ -62,14 +62,14 @@ function Registration() {
     <Container maxWidth="xs" className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h6">Create new account</Typography>
+          <Typography variant="h6">Создать новый аккаунт</Typography>
         </Grid>
       </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Controller
-              name="firstName"
+              name="firstname"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -77,7 +77,7 @@ function Registration() {
                   {...field}
                   error={Boolean(errors.firstName?.message)}
                   fullWidth={true}
-                  label="First name"
+                  label="Имя"
                   variant="filled"
                   helperText={errors.firstName?.message}
                 />
@@ -87,7 +87,7 @@ function Registration() {
 
           <Grid item xs={12}>
             <Controller
-              name="lastName"
+              name="фамилия"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -95,7 +95,7 @@ function Registration() {
                   {...field}
                   error={Boolean(errors.lastName?.message)}
                   fullWidth={true}
-                  label="Last name"
+                  label="Фамилия"
                   variant="filled"
                   helperText={errors.lastName?.message}
                 />
@@ -124,7 +124,7 @@ function Registration() {
 
           <Grid item xs={12}>
             <Controller
-              name="password"
+              name="пароль"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -133,7 +133,7 @@ function Registration() {
                   error={Boolean(errors.password?.message)}
                   type="password"
                   fullWidth={true}
-                  label="Password"
+                  label="Пароль"
                   variant="filled"
                   helperText={errors.password?.message}
                 />
@@ -147,7 +147,7 @@ function Registration() {
               type="submit"
               disabled={isLoading}
             >
-              Registration
+              Регистрация
             </Button>
             <Button
               color="inherit"
@@ -156,7 +156,7 @@ function Registration() {
               component={Link}
               to="/login"
             >
-              Already have an account?
+              Уже есть аккаунт?
             </Button>
           </Grid>
         </Grid>

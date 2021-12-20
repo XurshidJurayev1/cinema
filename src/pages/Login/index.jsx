@@ -62,7 +62,7 @@ function Login() {
     <Container maxWidth="xs" className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h6">Login</Typography>
+          <Typography variant="h6">Авторизоваться</Typography>
         </Grid>
       </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -97,7 +97,7 @@ function Login() {
                   error={Boolean(errors.password?.message)}
                   type="password"
                   fullWidth={true}
-                  label="Password"
+                  label="Пароль"
                   variant="filled"
                   helperText={errors.password?.message}
                 />

@@ -12,7 +12,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  centerToolbar: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexGrow: 1,
+  },
   rightToolbar: {
+    display: 'flex',
+    justifyContent: 'right',
+    alignItems: 'center',
     flexGrow: 1,
   },
   title: {
@@ -37,30 +46,33 @@ function Header() {
           <Button color="inherit" component={Link} to="/">
             Cinema app
           </Button>
-          <div className={classes.rightToolbar}>
-            <Button color="inherit" component={Link} to="/all-cinema">
-              All cinema
-            </Button>
-          </div>
+          {
+            auth.user && <div className={classes.centerToolbar}>
+              <Button color="inherit" component={Link} to="/all-cinema">
+                Все кино
+              </Button>
+            </div>
+          }
           {auth.isLoaded &&
           (auth.user ? (
             <>
+
               <Button color="inherit" component={Link} to="/profile">
                 {auth.user.firstName} {auth.user.lastName}
               </Button>
               <Button color="inherit" onClick={onLogOut}>
-                Log out
+                Выйти
               </Button>
             </>
           ) : (
-            <>
+            <div className={classes.rightToolbar}>
               <Button color="inherit" component={Link} to="/login">
-                Login
+                Авторизоваться
               </Button>
               <Button color="inherit" component={Link} to="/registration">
-                Registration
+                Регистрация
               </Button>
-            </>
+            </div>
           ))}
         </Toolbar>
       </AppBar>

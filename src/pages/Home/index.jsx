@@ -1,4 +1,4 @@
-import { Grid, makeStyles, Container, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Container, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,11 +14,11 @@ function Home() {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Typography variant="h2" gutterBottom>
-            Homepage
+            Главная страница
           </Typography>
           <Typography variant="body1" gutterBottom>
-            This is demo app with login, registration and updating profile
-            flows.
+            Это демонстрационное приложение для кинотеатра с потоками входа, регистрации и обновления профиля. Я
+            использовал api cinema с базой данных фильмов (TMDB).
           </Typography>
         </Grid>
       </Grid>

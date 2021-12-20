@@ -89,7 +89,7 @@ function Profile() {
                   {...field}
                   error={Boolean(errors.firstName?.message)}
                   fullWidth={true}
-                  label="First name"
+                  label="Имя"
                   variant="filled"
                   helperText={errors.firstName?.message}
                 />
@@ -107,7 +107,7 @@ function Profile() {
                   {...field}
                   error={Boolean(errors.lastName?.message)}
                   fullWidth={true}
-                  label="Last name"
+                  label="Фамилия"
                   variant="filled"
                   helperText={errors.lastName?.message}
                 />
@@ -122,7 +122,7 @@ function Profile() {
               type="submit"
               disabled={isLoading}
             >
-              Update
+              Обновлять
             </Button>
           </Grid>
         </Grid>
