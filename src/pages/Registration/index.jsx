@@ -1,4 +1,4 @@
-import { useForm, Controller } from "react-hook-form";
+import { useForm, Controller } from 'react-hook-form';
 import {
   TextField,
   Grid,
@@ -6,13 +6,13 @@ import {
   Container,
   Button,
   Typography,
-} from "@material-ui/core";
-import { yupResolver } from "@hookform/resolvers/yup";
-import validationSchema from "./validation";
-import api from "../../services/api";
-import useAuth from "../../hooks/useAuth";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+} from '@material-ui/core';
+import { yupResolver } from '@hookform/resolvers/yup';
+import validationSchema from './validation';
+import api from '../../services/api';
+import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +48,7 @@ function Registration() {
       if (e.response.status === 422) {
         Object.keys(e.response.data.errors).forEach((key) => {
           setError(key, {
-            type: "manual",
+            type: 'manual',
             message: e.response.data.errors[key],
           });
         });
@@ -69,7 +69,7 @@ function Registration() {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Controller
-              name="firstname"
+              name="firstName"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -87,7 +87,7 @@ function Registration() {
 
           <Grid item xs={12}>
             <Controller
-              name="фамилия"
+              name="lastName"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -124,7 +124,7 @@ function Registration() {
 
           <Grid item xs={12}>
             <Controller
-              name="пароль"
+              name="password"
               control={control}
               defaultValue=""
               render={({ field }) => (
