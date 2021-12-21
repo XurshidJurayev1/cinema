@@ -30,12 +30,36 @@
     max-width: 100%;
 }
 
+.play {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background: rgba(255, 0, 0, 0.8);
+    z-index: 100;
+    color: #fff;
+}
+
+.play svg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 .cardInfo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
     color: #fff;
+    height: 100%;
 }
 
 .cardInfo h3 {
@@ -44,7 +68,7 @@
     margin-right: 15px;
 }
 
-.cardOver {
+.card .cardOver {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -65,7 +89,12 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .cardOver {
+.cardInfo:hover ~ .cardOver {
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cardOver:hover .cardOver {
     transform: translateY(0%);
     transition: transform 0.3s ease-in-out;
 }

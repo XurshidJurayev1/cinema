@@ -5,7 +5,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import { connect } from 'react-redux';
 import { actionModalMovie, actionSelectedMovie } from '../../action';
 import ContentModal from '../../components/ContentModal';
-
+import { BsFillPlayFill } from 'react-icons/bs';
 
 const IMG_API = 'https://image.tmdb.org/t/p/w1280/';
 
@@ -21,9 +21,12 @@ const Movies = (props) => {
 
 
   return (
-    <div className={s.card} onClick={select}>
+    <div className={s.card}>
       <ContentModal data={props}>
-        <LazyLoadImage src={IMG_API + poster_path} alt={title} effect="blur" delayTime={400} />
+        <div className={s.play} onClick={select}>
+          <BsFillPlayFill />
+        </div>
+          <LazyLoadImage src={IMG_API + poster_path} alt={title} effect="blur" delayTime={400} />
         <div className={s.cardInfo}>
           <h3>{title || name}</h3>
           <span>{vote_average}</span>
